@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Faker API </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+
+    <center>
+    
+    <h1 style="font-size: 4rem;padding: 20px;">
+        Welcome To FAKER API Test
+    </h1>
+
+    <form action = "/" method = "post">
+        <div style="padding: 0px 50px;">
+            <select class="form-select" aria-label="Default select example" name="category" id = "categ" style="width: 30%; position: relative;">
+                    <option selected>Select Resource</option>
+                    <option value="addresses">Addresses</option>
+                    <option value="books">Books</option>
+                    <option value="companies">Companies</option>
+                    <option value="credit_cards">Credit Cards</option>
+                    <option value="images">Images</option>
+                    <option value="persons">Persons</option>
+                    <option value="places">Places</option>
+                    <option value="products">Products</option>
+                    <option value="texts">Texts</option>
+                    <option value="users">Users</option>
+                </select>
+            </h2>
+        </div>
+    
+        <div id = "heading" style="padding-top: 10px;">
+            <h1 style="font-size: 2rem;">
+                Enter Details For Generating <label id = "categor"> Addresses </label> Data
+            </h1>
+        </div>
+
+        <div id = "language" style="padding: 5px;" >
+                <select class="form-select" aria-label="Default select example" name="locale" style="width: 30%; position: relative;">
+                    <option value="en_US">US English</option>
+                    <option value="en_EN">British English</option>
+                    <option value="fr_FR">French</option>
+                </select>
+        </div>
+        <div id = "quantity" style="padding: 10px 0px 0px;">
+                <div class="input-group mb-3" style="width: 30%; position: relative;">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Enter Quantity : </span>
+                    <input type="number" value = '1' min="1" name = "quantity" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+        </div>
+        <div id = "seed" style="padding: 0px 0px 0px;">
+                <div class="input-group mb-3" style="width: 30%; position: relative;">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Enter Seed : </span>
+                    <input type="number" min="1" name = "seed" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+        </div>
+
+        <div id = "images" hidden style="padding: 0px 0px 5px;">
+            <div>
+                    <select class="form-select" aria-label="Default select example" id = "type" name="type" style="width: 30%; position: relative;">
+                        <option value="any">Any</option>
+                        <option value="animals">Animals</option>
+                        <option value="architecture">Architecture</option>
+                        <option value="nature">Nature</option>
+                        <option value="people">People</option>
+                        <option value="tech">Tech</option>
+                        <option value="kittens">Kittens</option>
+                        <option value="pokemon">Pokemon</option>
+                    </select>
+                </h3>
+            </div>
+            <div style="padding: 15px 0px 0px;">
+                <div class="input-group mb-3" style="width: 30%; position: relative;">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Enter Width : </span>
+                    <input id = "width" type="number" value = '640' name = "width" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+            <div>
+                <div class="input-group mb-3" style="width: 30%; position: relative;">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Enter Height : </span>
+                    <input id = "height" type="number" value = '480' name = "height" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+        </div>
+        <div id = "gender" hidden style="padding: 0px 0px 15px;">
+                <select class="form-select" aria-label="Default select example" id = "gender_select" name="gender" style="width: 30%; position: relative;">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+        </div>
+        <div id = "persons" hidden >
+            <div class="input-group mb-3" style="width: 30%; position: relative;">
+                <span class="input-group-text" id="inputGroup-sizing-default">Birth Start Date : </span>
+                <input id = "birth_start_date" type="date" name = "birthday_start" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3" style="width: 30%; position: relative;">
+                <span class="input-group-text" id="inputGroup-sizing-default">Birth End Date : </span>
+                <input id = "birth_end_date" type="date" name = "birthday_end" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+        </div>
+        <div id = "products" hidden >
+            <div>
+                <div class="input-group mb-3" style="width: 30%; position: relative;">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Min Price : </span>
+                    <input id = "min_price" type="number" step = '0.01' value = '0.01' min="0" name = "price_min" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+            <div>
+                <div class="input-group mb-3" style="width: 30%; position: relative;">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Max Price : </span>
+                    <input id = "max_price" type="number" step = '0.01' min="0" name = "price_max" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+            <div>
+                <div class="input-group mb-3" style="width: 30%; position: relative;">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Taxes : </span>
+                    <input id = "taxes" type="number" value = '22' min="0" name = "taxes" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+            <div style="padding: 0px 0px 15px;">
+                <select class="form-select" aria-label="Default select example"  id = "categories_type" name="categories_type" style="width: 30%; position: relative;">
+                    <option value="integer">Integer</option>
+                    <option value="string">String</option>
+                    <option value="uuid">UUID</option>
+                </select>
+            </div>
+        </div>
+
+        <div id = "texts" hidden>
+            <div class="input-group mb-3" style="width: 30%; position: relative;">
+                <span class="input-group-text" id="inputGroup-sizing-default">Characters : </span>
+                <input id = "characters" type="number" value = '200' min="1" name = "characters" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+        </div>
+
+        <div style = " padding: 0px 0px 30px;">
+            <button  class="btn btn-outline-dark" style = " padding: 0px; width: 30%; height: 50px;" id = "button" type="submit"> <b style="font-size: 1.1rem;">Generate Fake Data</b> </button>
+        </div>
+    </form>
+    </center>
+
+    <script src = "/index.js"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>
