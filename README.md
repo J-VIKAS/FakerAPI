@@ -1,5 +1,5 @@
 # FakerAPI
-This is an API to generate fake data for different resources based on some user desired input.
+This is an application which uses an API to generate fake data for different resources based on some user desired input.
   
 To run the above project, following are the steps required :-  
 1). Fork the above files.  
